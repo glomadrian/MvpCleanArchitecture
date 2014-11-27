@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Application palette-->
+    <item name="material_blue_500" type="color">#2196F3</item>
+    <item name="material_blue_800" type="color">#1565C0</item>
+    <item name="material_pink_A400" type="color">#F50057</item>
+    <item name="material_yellow_A200" type="color">#FFFF00</item>
+
+    <!--Other colors-->
+    <item name="material_green_500" type="color">#4CAF50</item>
+    <item name="material_lime_A100" type="color">#F4FF81</item>
+    <item name="material_yellow_500" type="color">#FFEB3B</item>
+
+
+    <!--Component colors-->
+    <item name="primary" type="color">@color/material_blue_500</item>
+    <item name="primaryDark" type="color">@color/material_blue_800</item>
+
+    <item name="model_card_footer_background" type="color">#58000000</item>
+    <item name="model_card_footer_text" type="color">#FFF</item>
+
+    <color name="blue_circle">@color/material_blue_500</color>
+    <color name="green_circle">@color/material_green_500</color>
+    <color name="yellow_circle">@color/material_yellow_500</color>
+    <color name="separator_line">@color/material_blue_800</color>
+    <color name="model_info_title_color">#FFF</color>
+    <color name="mode_info_bottom_section">@color/material_blue_500</color>
+    <color name="model_info_bottom_section_text">#fff</color>
+    <color name="model_info_title_shadow_color">#333333</color>
+</resources>

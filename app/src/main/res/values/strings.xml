@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MVP Clean Architecture</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sagittis faucibus rhoncus. Donec dignissim finibus diam nec sollicitudin. Nullam sed leo nec felis imperdiet maximus in mattis lacus. Phasellus eget quam ut metus commodo fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec condimentum ultricies risus, et ultricies leo sollicitudin sed. In hac habitasse platea dictumst. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse in lacinia risus, sed mattis justo. Sed a quam laoreet nisl efficitur eleifend nec quis nisi.</string>
+    <string name="info_number_1">Comics</string>
+    <string name="info_number_2">Series</string>
+    <string name="info_number_3">Histories</string>
+    <string name="mode_info_description_text">No description avaiable</string>
+</resources>
