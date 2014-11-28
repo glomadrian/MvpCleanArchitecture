@@ -9,7 +9,7 @@
         android:id="@+id/character_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="com.github.glomadrian.mpvcleanarchitecture.ui.fragment.CharacterCollectionFragment"
+        class="com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterCollectionFragment"
         tools:context="com.github.pedrovgs.effectiveandroidui.ui.activity.MainActivity">
 
     </fragment>
