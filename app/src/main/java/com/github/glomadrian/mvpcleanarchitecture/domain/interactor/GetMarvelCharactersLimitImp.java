@@ -6,7 +6,7 @@ import com.github.glomadrian.mvpcleanarchitecture.domain.repository.exception.Ge
 import com.github.glomadrian.mvpcleanarchitecture.executor.InteractorExecutor;
 import com.github.glomadrian.mvpcleanarchitecture.executor.MainThreadExecutor;
 
-import java.util.Collection;
+import java.util.List;
 
 /**
  * This implementation of the interactor (case use) will use a repository (injected) to get a collection
@@ -30,7 +30,7 @@ public class GetMarvelCharactersLimitImp extends AbstractInteractor implements G
     public void run() {
 
         try {
-            final Collection<MarvelCharacter> marvelCharacters = marvelRepository.getCharacterCollection(limit);
+            final List<MarvelCharacter> marvelCharacters = marvelRepository.getCharacterCollection(limit);
 
             getMainThreadExecutor().execute(new Runnable() {
                 @Override

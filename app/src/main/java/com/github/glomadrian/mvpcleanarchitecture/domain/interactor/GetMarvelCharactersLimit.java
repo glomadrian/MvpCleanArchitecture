@@ -3,6 +3,7 @@ package com.github.glomadrian.mvpcleanarchitecture.domain.interactor;
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Interface for define this interactor
@@ -15,7 +16,7 @@ public interface GetMarvelCharactersLimit {
 
     interface Callback {
 
-        void onMarvelCharacterList(Collection<MarvelCharacter> marvelCharacters);
+        void onMarvelCharacterList(List<MarvelCharacter> marvelCharacters);
 
         void onError();
     }

@@ -7,6 +7,7 @@ import com.github.glomadrian.mvpcleanarchitecture.executor.InteractorExecutor;
 import com.github.glomadrian.mvpcleanarchitecture.executor.MainThreadExecutor;
 
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @author glomadrian
@@ -27,7 +28,7 @@ public class GetMarvelCharactersPaginatedImp extends AbstractInteractor implemen
     @Override
     public void run() {
         try {
-            final Collection<MarvelCharacter> marvelCharacters = marvelRepository.getCharacterCollectionPaginated(limit, offset);
+            final List<MarvelCharacter> marvelCharacters = marvelRepository.getCharacterCollectionPaginated(limit, offset);
 
             getMainThreadExecutor().execute(new Runnable() {
                 @Override
