@@ -6,7 +6,7 @@ import com.github.glomadrian.mvpcleanarchitecture.domain.repository.ResponseMapp
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.model.CharacterDataWrapper;
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.exception.GetCharactersException;
 
-import java.util.Collection;
+import java.util.List;
 
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
@@ -22,7 +22,7 @@ public class RetrofitMarvelAPIRepository implements MarvelRepository {
 
     private String endpoint;
     private RequestInterceptor requestInterceptor;
-    private RetrofitMarvelAPI marvelAPI;
+    private RetrofitMarvelService marvelAPI;
     private ResponseMapper responseMapper;
 
     public RetrofitMarvelAPIRepository(String endpoint, RequestInterceptor requestInterceptor, ResponseMapper responseMapper) {
@@ -40,16 +40,16 @@ public class RetrofitMarvelAPIRepository implements MarvelRepository {
                 .setRequestInterceptor(requestInterceptor)
                 .build();
 
-        marvelAPI = restAdapter.create(RetrofitMarvelAPI.class);
+        marvelAPI = restAdapter.create(RetrofitMarvelService.class);
 
     }
 
     @Override
-    public Collection<MarvelCharacter> getCharacterCollection(int limit) throws GetCharactersException {
+    public List<MarvelCharacter> getCharacterCollection(int limit) throws GetCharactersException {
         //The request using retrofit
 
         try {
-            CharacterDataWrapper characterDataWrapper = marvelAPI.getCharacterCollection(limit);
+            CharacterDataWrapper characterDataWrapper = marvelAPI.getCharacters(limit);
             //Map response from api to domain model
             return responseMapper.mapResponse(characterDataWrapper);
         } catch (RetrofitError retrofitError) {
@@ -62,9 +62,9 @@ public class RetrofitMarvelAPIRepository implements MarvelRepository {
     }
 
     @Override
-    public Collection<MarvelCharacter> getCharacterCollectionPaginated(int limit, int offset) throws GetCharactersException {
+    public List<MarvelCharacter> getCharacterCollectionPaginated(int limit, int offset) throws GetCharactersException {
         try {
-            CharacterDataWrapper characterDataWrapper = marvelAPI.getCharacterCollection(limit, offset);
+            CharacterDataWrapper characterDataWrapper = marvelAPI.getCharacters(limit, offset);
             //Map response from api to domain model
             return responseMapper.mapResponse(characterDataWrapper);
         } catch (RetrofitError retrofitError) {

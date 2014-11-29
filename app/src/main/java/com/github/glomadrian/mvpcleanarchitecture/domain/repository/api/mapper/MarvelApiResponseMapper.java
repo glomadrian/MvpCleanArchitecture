@@ -6,8 +6,8 @@ import com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.model.Ch
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.model.CharacterDataWrapper;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * This custom implementation of the mapper will map the response from the Marvel api to Domain model
@@ -17,11 +17,11 @@ import java.util.Collections;
 public class MarvelApiResponseMapper implements ResponseMapper<CharacterDataWrapper> {
 
     @Override
-    public Collection<MarvelCharacter> mapResponse(CharacterDataWrapper characterDataWrapper) {
+    public List<MarvelCharacter> mapResponse(CharacterDataWrapper characterDataWrapper) {
 
-        Collection<Character> characters = characterDataWrapper.getCharacterDataContainer().getCharacter();
+        List<Character> characters = characterDataWrapper.getCharacterDataContainer().getResults();
 
-        Collection<MarvelCharacter> marvelCharacters = Collections.emptyList();
+        List<MarvelCharacter> marvelCharacters = Collections.emptyList();
 
         if (characterDataWrapper.getCharacterDataContainer().getCount() > 0) {
             marvelCharacters = new ArrayList<MarvelCharacter>();

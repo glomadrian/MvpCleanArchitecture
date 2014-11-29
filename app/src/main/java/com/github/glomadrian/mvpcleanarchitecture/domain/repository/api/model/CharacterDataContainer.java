@@ -1,6 +1,6 @@
 package com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.model;
 
-import java.util.Collection;
+import java.util.List;
 
 /**
  * @author glomadrian
@@ -10,7 +10,7 @@ public class CharacterDataContainer {
     private int limit;
     private int total;
     private int count;
-    private Collection<Character> results;
+    private List<Character> results;
 
     public int getLimit() {
         return limit;
@@ -36,11 +36,11 @@ public class CharacterDataContainer {
         this.count = count;
     }
 
-    public Collection<Character> getCharacter() {
+    public List<Character> getResults() {
         return results;
     }
 
-    public void setCharacter(Collection<Character> results) {
+    public void setResults(List<Character> results) {
         this.results = results;
     }
 }

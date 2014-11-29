@@ -8,11 +8,11 @@ import retrofit.http.Query;
 /**
  * @author glomadrian
  */
-public interface RetrofitMarvelAPI {
+public interface RetrofitMarvelService {
 
     @GET("/v1/public/characters")
-    CharacterDataWrapper getCharacterCollection(@Query("limit") int limit);
+    CharacterDataWrapper getCharacters(@Query("limit") int limit);
 
     @GET("/v1/public/characters")
-    CharacterDataWrapper getCharacterCollection(@Query("limit") int limit, @Query("offset") int offset);
+    CharacterDataWrapper getCharacters(@Query("limit") int limit, @Query("offset") int offset);
 }

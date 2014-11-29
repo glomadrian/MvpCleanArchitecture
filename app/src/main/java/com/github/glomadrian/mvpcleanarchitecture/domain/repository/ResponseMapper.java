@@ -2,7 +2,7 @@ package com.github.glomadrian.mvpcleanarchitecture.domain.repository;
 
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 
-import java.util.Collection;
+import java.util.List;
 
 /**
  * The domain model is different from others resources models, in each case the repository must map
@@ -12,5 +12,5 @@ import java.util.Collection;
  */
 public interface ResponseMapper<From> {
 
-    Collection<MarvelCharacter> mapResponse(From response);
+    List<MarvelCharacter> mapResponse(From response);
 }
