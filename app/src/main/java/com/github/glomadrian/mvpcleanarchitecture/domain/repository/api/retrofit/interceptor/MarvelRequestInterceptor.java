@@ -3,7 +3,7 @@ package com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.retrofi
 import android.util.Log;
 
 import com.github.glomadrian.mvpcleanarchitecture.domain.LogUtils;
-import com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.retrofit.ApiUtils;
+import com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.ApiUtils;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -32,7 +32,6 @@ public class MarvelRequestInterceptor implements RequestInterceptor {
 
     @Override
     public void intercept(RequestFacade request) {
-
         String timeStamp = generateTimestamp();
         request.addEncodedQueryParam(ApiUtils.PARAM_TIMESTAMP, timeStamp);
         request.addEncodedQueryParam(ApiUtils.PARAM_KEY, publicKey);

@@ -9,7 +9,7 @@
         android:id="@+id/character_fragment"
         android:layout_width="250dp"
         android:layout_height="match_parent"
-        class="com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterCollectionFragment"
+        class="com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterListFragment"
         tools:context="com.github.pedrovgs.effectiveandroidui.ui.activity.MainActivity" />
 
     <FrameLayout

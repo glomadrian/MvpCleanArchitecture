@@ -3,7 +3,7 @@ package com.github.glomadrian.mvpcleanarchitecture.ui.view;
 /**
  * @author glomadrian
  */
-public interface CharacterCollectionView extends ModelCollectionView {
+public interface CharacterListView extends ModelListView {
 
     int getModelsRenderer();
 
@@ -14,5 +14,7 @@ public interface CharacterCollectionView extends ModelCollectionView {
     void activateLastCharacterViewListener();
 
     void disableLastCharacterViewListener();
+
+    void onError();
 
 }

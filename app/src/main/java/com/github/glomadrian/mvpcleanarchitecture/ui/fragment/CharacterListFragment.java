@@ -11,15 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.github.glomadrian.mvpcleanarchitecture.R;
 import com.github.glomadrian.mvpcleanarchitecture.app.BaseFragment;
 import com.github.glomadrian.mvpcleanarchitecture.domain.LogUtils;
-import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacterCollection;
+import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacterList;
 import com.github.glomadrian.mvpcleanarchitecture.ui.adapter.ModelAdapter;
 import com.github.glomadrian.mvpcleanarchitecture.ui.custom.recycler.ClickRecyclerView;
-import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterCollectionPresenter;
-import com.github.glomadrian.mvpcleanarchitecture.ui.view.CharacterCollectionView;
+import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterListPresenter;
+import com.github.glomadrian.mvpcleanarchitecture.ui.view.CharacterListView;
 import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.Model;
 
 import org.parceler.Parcels;
@@ -33,12 +34,12 @@ import butterknife.InjectView;
 /**
  * @author glomadrian
  */
-public class CharacterCollectionFragment extends BaseFragment implements CharacterCollectionView {
+public class CharacterListFragment extends BaseFragment implements CharacterListView {
 
     private static final String EXTRA_CHARACTER_COLLECTION = "extraCharacterCollection";
 
     @Inject
-    CharacterCollectionPresenter characterCollectionPresenter;
+    CharacterListPresenter characterCollectionPresenter;
 
     @InjectView(R.id.collection_view)
     ClickRecyclerView collectionView;
@@ -58,7 +59,7 @@ public class CharacterCollectionFragment extends BaseFragment implements Charact
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.character_collection, container, false);
+        View view = inflater.inflate(R.layout.character_list, container, false);
         return view;
     }
 
@@ -90,7 +91,7 @@ public class CharacterCollectionFragment extends BaseFragment implements Charact
         super.onSaveInstanceState(outState);
 
         //Get the actual state of the characters
-        MarvelCharacterCollection marvelCharacters = characterCollectionPresenter.getParcelableCollection();
+        MarvelCharacterList marvelCharacters = characterCollectionPresenter.getParcelableCollection();
 
         //Parcel the object to be saved in the bundle
         Parcelable marvelCharactersWrapped = Parcels.wrap(marvelCharacters);
@@ -107,7 +108,7 @@ public class CharacterCollectionFragment extends BaseFragment implements Charact
             Log.i(LogUtils.generateTag(this), "onViewStateRestored");
             //Get parcelable from bundle
             Parcelable marvelCharactersWrapped = savedInstanceState.getParcelable(EXTRA_CHARACTER_COLLECTION);
-            MarvelCharacterCollection marvelCharacters = Parcels.unwrap(marvelCharactersWrapped);
+            MarvelCharacterList marvelCharacters = Parcels.unwrap(marvelCharactersWrapped);
             characterCollectionPresenter.restoreParcelableCollection(marvelCharacters);
         }
     }
@@ -157,6 +158,11 @@ public class CharacterCollectionFragment extends BaseFragment implements Charact
     @Override
     public void disableLastCharacterViewListener() {
         disableSearchOnFinish();
+    }
+
+    @Override
+    public void onError() {
+        Toast.makeText(this.getActivity(), getString(R.string.genericError), Toast.LENGTH_LONG).show();
     }
 
     private void addClickListenerToCharacterList() {

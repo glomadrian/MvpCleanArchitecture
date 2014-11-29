@@ -6,9 +6,10 @@ import android.view.LayoutInflater;
 import com.github.glomadrian.mvpcleanarchitecture.app.MVPCleanArchitectureApplication;
 import com.github.glomadrian.mvpcleanarchitecture.ui.activity.MainActivity;
 import com.github.glomadrian.mvpcleanarchitecture.ui.activity.ModelInfoActivity;
-import com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterCollectionFragment;
+import com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterListFragment;
 import com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterInfoFragment;
-import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterCollectionPresenterImp;
+import com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterListFragment;
+import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterListPresenterImp;
 
 import javax.inject.Singleton;
 
@@ -29,9 +30,9 @@ import dagger.Provides;
         },
         injects = {
                 MVPCleanArchitectureApplication.class,
-                CharacterCollectionFragment.class,
+                CharacterListFragment.class,
                 CharacterInfoFragment.class,
-                CharacterCollectionPresenterImp.class,
+                CharacterListPresenterImp.class,
                 MainActivity.class,
                 CharacterInfoFragment.class,
                 ModelInfoActivity.class

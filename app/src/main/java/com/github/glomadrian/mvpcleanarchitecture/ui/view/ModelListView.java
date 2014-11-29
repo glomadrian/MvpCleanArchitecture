@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author glomadrian
  */
-public interface ModelCollectionView extends View {
+public interface ModelListView extends View {
 
 
     void add(Model model);

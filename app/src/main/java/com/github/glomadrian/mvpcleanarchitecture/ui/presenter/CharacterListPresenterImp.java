@@ -1,14 +1,16 @@
 package com.github.glomadrian.mvpcleanarchitecture.ui.presenter;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.github.glomadrian.mvpcleanarchitecture.app.BasePresenter;
+import com.github.glomadrian.mvpcleanarchitecture.domain.LogUtils;
 import com.github.glomadrian.mvpcleanarchitecture.domain.interactor.GetMarvelCharactersLimit;
 import com.github.glomadrian.mvpcleanarchitecture.domain.interactor.GetMarvelCharactersPaginated;
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
-import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacterCollection;
+import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacterList;
 import com.github.glomadrian.mvpcleanarchitecture.ui.reactive.CharacterSelectedObservable;
-import com.github.glomadrian.mvpcleanarchitecture.ui.view.CharacterCollectionView;
+import com.github.glomadrian.mvpcleanarchitecture.ui.view.CharacterListView;
 import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.CharacterViewModel;
 import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.Model;
 
@@ -19,17 +21,17 @@ import java.util.List;
 /**
  * @author glomadrian
  */
-public class CharacterCollectionPresenterImp extends BasePresenter implements CharacterCollectionPresenter {
+public class CharacterListPresenterImp extends BasePresenter implements CharacterListPresenter {
 
 
-    private CharacterCollectionView modelCollectionView;
+    private CharacterListView modelCollectionView;
     private GetMarvelCharactersLimit getMarvelCharactersLimit;
     private GetMarvelCharactersPaginated getMarvelCharactersPaginated;
-    private MarvelCharacterCollection marvelCharacterCollection;
+    private MarvelCharacterList marvelCharacterCollection;
     private CharacterSelectedObservable characterSelectedObservable;
     private Context context;
 
-    public CharacterCollectionPresenterImp(Context context, GetMarvelCharactersLimit getMarvelCharactersLimit, GetMarvelCharactersPaginated getMarvelCharactersPaginated, CharacterSelectedObservable characterSelectedObservable) {
+    public CharacterListPresenterImp(Context context, GetMarvelCharactersLimit getMarvelCharactersLimit, GetMarvelCharactersPaginated getMarvelCharactersPaginated, CharacterSelectedObservable characterSelectedObservable) {
         super(context);
         this.context = context;
         this.getMarvelCharactersLimit = getMarvelCharactersLimit;
@@ -39,7 +41,7 @@ public class CharacterCollectionPresenterImp extends BasePresenter implements Ch
 
     @Override
     public void initialize() {
-        marvelCharacterCollection = new MarvelCharacterCollection();
+        marvelCharacterCollection = new MarvelCharacterList();
         searchForCharacters();
     }
 
@@ -59,7 +61,7 @@ public class CharacterCollectionPresenterImp extends BasePresenter implements Ch
     }
 
     @Override
-    public void setView(CharacterCollectionView view) {
+    public void setView(CharacterListView view) {
         this.modelCollectionView = view;
     }
 
@@ -69,12 +71,12 @@ public class CharacterCollectionPresenterImp extends BasePresenter implements Ch
     }
 
     @Override
-    public MarvelCharacterCollection getParcelableCollection() {
+    public MarvelCharacterList getParcelableCollection() {
         return marvelCharacterCollection;
     }
 
     @Override
-    public void restoreParcelableCollection(MarvelCharacterCollection marvelCharacters) {
+    public void restoreParcelableCollection(MarvelCharacterList marvelCharacters) {
         this.marvelCharacterCollection = marvelCharacters;
         modelCollectionView.add(convertToModelViewList(marvelCharacters.getMarvelCharacters()));
     }
@@ -90,14 +92,15 @@ public class CharacterCollectionPresenterImp extends BasePresenter implements Ch
 
         getMarvelCharactersLimit.execute(10, new GetMarvelCharactersLimit.Callback() {
             @Override
-            public void onMarvelCharacterList(Collection<MarvelCharacter> marvelCharacters) {
+            public void onMarvelCharacterList(List<MarvelCharacter> marvelCharacters) {
                 marvelCharacterCollection.addAll(marvelCharacters);
                 modelCollectionView.add(convertToModelViewList(marvelCharacters));
             }
 
             @Override
             public void onError() {
-
+                Log.e(LogUtils.generateTag(this), "Error on interactor getMarvelCharactersLimit");
+                modelCollectionView.onError();
             }
         });
     }
@@ -109,7 +112,7 @@ public class CharacterCollectionPresenterImp extends BasePresenter implements Ch
 
         getMarvelCharactersPaginated.execute(5, modelCollectionView.getModelsRenderer(), new GetMarvelCharactersPaginated.Callback() {
             @Override
-            public void onMarvelCharacterList(Collection<MarvelCharacter> marvelCharacters) {
+            public void onMarvelCharacterList(List<MarvelCharacter> marvelCharacters) {
                 marvelCharacterCollection.addAll(marvelCharacters);
                 modelCollectionView.add(convertToModelViewList(marvelCharacters));
                 modelCollectionView.hideLoading();
@@ -118,13 +121,15 @@ public class CharacterCollectionPresenterImp extends BasePresenter implements Ch
 
             @Override
             public void onError() {
+                Log.e(LogUtils.generateTag(this), "Error on interactor getMarvelCharactersPaginated");
                 modelCollectionView.hideLoading();
                 modelCollectionView.activateLastCharacterViewListener();
+                modelCollectionView.onError();
             }
         });
     }
 
-    private List<Model> convertToModelViewList(Collection<MarvelCharacter> marvelCharacters) {
+    private List<Model> convertToModelViewList(List<MarvelCharacter> marvelCharacters) {
 
 
         List<Model> modelList = new ArrayList<Model>();
