@@ -1,4 +1,4 @@
-MVP Clean Architecture
+MVP Clean Architecture [![Build Status](https://travis-ci.org/glomadrian/MvpCleanArchitecture.svg?branch=master)](https://travis-ci.org/glomadrian/MvpCleanArchitecture)
 ==
 
 A sample project using Clean architecture and MVP
