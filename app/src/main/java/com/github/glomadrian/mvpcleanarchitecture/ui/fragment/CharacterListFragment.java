@@ -177,16 +177,9 @@ public class CharacterListFragment extends BaseFragment implements CharacterList
         collectionView.setOnScrollListener(null);
     }
 
-    private class FinishScrollListener implements RecyclerView.OnScrollListener {
-
+    private class FinishScrollListener extends RecyclerView.OnScrollListener {
         @Override
-        public void onScrollStateChanged(int i) {
-            //Do nothing
-        }
-
-        @Override
-        public void onScrolled(int i, int i2) {
-
+        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
             int lastVisibleItemPosition = mLayoutManager.findLastVisibleItemPosition() + 1;
             int modelsCount = modelAdapter.getItemCount();
 
