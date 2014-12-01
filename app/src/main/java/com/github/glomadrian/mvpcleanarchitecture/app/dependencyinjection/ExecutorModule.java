@@ -1,4 +1,4 @@
-package com.github.glomadrian.mvpcleanarchitecture.app.dependencyInjection;
+package com.github.glomadrian.mvpcleanarchitecture.app.dependencyinjection;
 
 import com.github.glomadrian.mvpcleanarchitecture.executor.InteractorExecutor;
 import com.github.glomadrian.mvpcleanarchitecture.executor.MainThreadExecutor;

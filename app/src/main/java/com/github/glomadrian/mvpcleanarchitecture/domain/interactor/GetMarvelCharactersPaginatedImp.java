@@ -1,12 +1,14 @@
 package com.github.glomadrian.mvpcleanarchitecture.domain.interactor;
 
+import android.util.Log;
+
+import com.github.glomadrian.mvpcleanarchitecture.domain.LogUtils;
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.MarvelRepository;
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.exception.GetCharactersException;
 import com.github.glomadrian.mvpcleanarchitecture.executor.InteractorExecutor;
 import com.github.glomadrian.mvpcleanarchitecture.executor.MainThreadExecutor;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -37,6 +39,7 @@ public class GetMarvelCharactersPaginatedImp extends AbstractInteractor implemen
                 }
             });
         } catch (GetCharactersException e) {
+            Log.e(LogUtils.generateTag(this), "Error on GetMarvelCharactersPaginatedImp interactor");
             getMainThreadExecutor().execute(new Runnable() {
                 @Override
                 public void run() {

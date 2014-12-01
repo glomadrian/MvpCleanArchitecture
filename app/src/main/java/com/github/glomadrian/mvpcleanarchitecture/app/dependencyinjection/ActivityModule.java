@@ -1,9 +1,9 @@
-package com.github.glomadrian.mvpcleanarchitecture.app.dependencyInjection;
+package com.github.glomadrian.mvpcleanarchitecture.app.dependencyinjection;
 
 import android.app.Activity;
 import android.content.Context;
 
-import com.github.glomadrian.mvpcleanarchitecture.app.dependencyInjection.qualifier.ActivityContext;
+import com.github.glomadrian.mvpcleanarchitecture.app.dependencyinjection.qualifier.ActivityContext;
 
 import dagger.Module;
 import dagger.Provides;

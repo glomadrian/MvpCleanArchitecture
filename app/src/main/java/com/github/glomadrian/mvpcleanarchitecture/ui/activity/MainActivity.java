@@ -29,8 +29,8 @@ import javax.inject.Inject;
  */
 public class MainActivity extends BaseActivity implements CharacterSelectedObserver {
 
-    public final String TAG_PORTRAIT = "V11-portrait";
-    public final String TAG_LANDSCAPE = "V11-landscape";
+    public static final String TAG_PORTRAIT = "V11-portrait";
+    public static final String TAG_LANDSCAPE = "V11-landscape";
 
     @Inject
     CharacterSelectedObservable characterSelectedObservable;

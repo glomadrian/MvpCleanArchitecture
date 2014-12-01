@@ -14,7 +14,8 @@ import android.view.View;
  *         from: https://github.com/lucasr/twoway-view
  */
 abstract class ClickItemTouchListener implements RecyclerView.OnItemTouchListener {
-    private static final String LOGTAG = "ClickItemTouchListener";
+
+    private static final int ANDROID_SDK_19 = 19;
 
     private final GestureDetectorCompat mGestureDetector;
 
@@ -24,15 +25,15 @@ abstract class ClickItemTouchListener implements RecyclerView.OnItemTouchListene
     }
 
     private boolean isAttachedToWindow(RecyclerView hostView) {
-        if (Build.VERSION.SDK_INT >= 19) {
+        if (Build.VERSION.SDK_INT >= ANDROID_SDK_19) {
             return hostView.isAttachedToWindow();
         } else {
-            return (hostView.getHandler() != null);
+            return hostView.getHandler() != null;
         }
     }
 
     private boolean hasAdapter(RecyclerView hostView) {
-        return (hostView.getAdapter() != null);
+        return hostView.getAdapter() != null;
     }
 
     @Override
@@ -100,7 +101,7 @@ abstract class ClickItemTouchListener implements RecyclerView.OnItemTouchListene
             final int y = (int) event.getY();
 
             mTargetChild = mHostView.findChildViewUnder(x, y);
-            return (mTargetChild != null);
+            return mTargetChild != null;
         }
 
         @Override

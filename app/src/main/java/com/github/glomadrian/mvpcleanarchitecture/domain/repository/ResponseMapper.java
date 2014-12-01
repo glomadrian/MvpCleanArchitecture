@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author glomadrian
  */
-public interface ResponseMapper<From> {
+public interface ResponseMapper<T> {
 
-    List<MarvelCharacter> mapResponse(From response);
+    List<MarvelCharacter> mapResponse(T response);
 }

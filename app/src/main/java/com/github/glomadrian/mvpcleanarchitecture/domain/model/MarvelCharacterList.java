@@ -13,7 +13,7 @@ import java.util.List;
 @Parcel
 public class MarvelCharacterList {
 
-    public final List<MarvelCharacter> marvelCharacters;
+    private final List<MarvelCharacter> marvelCharacters;
 
     public MarvelCharacterList() {
         this.marvelCharacters = new ArrayList<MarvelCharacter>();

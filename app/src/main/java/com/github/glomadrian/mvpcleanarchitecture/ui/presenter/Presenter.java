@@ -7,7 +7,7 @@ import com.github.glomadrian.mvpcleanarchitecture.ui.view.View;
  *
  * @author glomadrian
  */
-public interface Presenter<T1 extends View> {
+public interface Presenter<T extends View> {
 
     void initialize();
 
@@ -17,5 +17,5 @@ public interface Presenter<T1 extends View> {
 
     void onViewDestroy();
 
-    void setView(T1 view);
+    void setView(T view);
 }

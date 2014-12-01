@@ -1,4 +1,4 @@
-package com.github.glomadrian.mvpcleanarchitecture.ui.viewModel;
+package com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel;
 
 /**
  * This view model is a adapter from other model, usually a domain model, if in any moment the

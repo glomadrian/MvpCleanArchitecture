@@ -1,6 +1,6 @@
 package com.github.glomadrian.mvpcleanarchitecture.ui.view;
 
-import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.CharacterInfoViewModel;
+import com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel.CharacterInfoViewModel;
 
 /**
  * @author glomadrian

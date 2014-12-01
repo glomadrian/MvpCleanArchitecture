@@ -21,7 +21,7 @@ import com.github.glomadrian.mvpcleanarchitecture.ui.adapter.ModelAdapter;
 import com.github.glomadrian.mvpcleanarchitecture.ui.custom.recycler.ClickRecyclerView;
 import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterListPresenter;
 import com.github.glomadrian.mvpcleanarchitecture.ui.view.CharacterListView;
-import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.Model;
+import com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel.Model;
 
 import org.parceler.Parcels;
 
@@ -59,8 +59,7 @@ public class CharacterListFragment extends BaseFragment implements CharacterList
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.character_list, container, false);
-        return view;
+        return inflater.inflate(R.layout.character_list, container, false);
     }
 
     @Override

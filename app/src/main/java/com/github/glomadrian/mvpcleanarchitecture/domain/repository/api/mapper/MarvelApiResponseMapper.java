@@ -30,7 +30,6 @@ public class MarvelApiResponseMapper implements ResponseMapper<CharacterDataWrap
         for (Character character : characters) {
             marvelCharacters.add(createMarvelCharacterFromResponseCharacter(character));
         }
-
         return marvelCharacters;
     }
 

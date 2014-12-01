@@ -1,4 +1,4 @@
-package com.github.glomadrian.mvpcleanarchitecture.ui.viewModel;
+package com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel;
 
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 

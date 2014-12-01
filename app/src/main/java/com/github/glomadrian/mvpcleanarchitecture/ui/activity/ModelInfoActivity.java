@@ -15,7 +15,7 @@ import org.parceler.Parcels;
  */
 public class ModelInfoActivity extends BaseActivity {
 
-    public final static String KEY_CHARACTER = "character";
+    public static final String KEY_CHARACTER = "character";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

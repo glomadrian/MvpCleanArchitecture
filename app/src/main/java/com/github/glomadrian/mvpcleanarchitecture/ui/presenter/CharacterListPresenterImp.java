@@ -11,8 +11,8 @@ import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacterList;
 import com.github.glomadrian.mvpcleanarchitecture.ui.reactive.CharacterSelectedObservable;
 import com.github.glomadrian.mvpcleanarchitecture.ui.view.CharacterListView;
-import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.CharacterViewModel;
-import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.Model;
+import com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel.CharacterViewModel;
+import com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel.Model;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -23,6 +23,8 @@ import java.util.List;
  */
 public class CharacterListPresenterImp extends BasePresenter implements CharacterListPresenter {
 
+    private static final int LIMIT_GET_CHARACTERS = 10;
+    private static final int LIMIT_MORE_CHARACTERS = 5;
 
     private CharacterListView modelCollectionView;
     private GetMarvelCharactersLimit getMarvelCharactersLimit;
@@ -52,12 +54,12 @@ public class CharacterListPresenterImp extends BasePresenter implements Characte
 
     @Override
     public void onViewResume() {
-
+        //Do nothing
     }
 
     @Override
     public void onViewDestroy() {
-
+        //Do nothing
     }
 
     @Override
@@ -90,7 +92,7 @@ public class CharacterListPresenterImp extends BasePresenter implements Characte
 
     private void searchForCharacters() {
 
-        getMarvelCharactersLimit.execute(10, new GetMarvelCharactersLimit.Callback() {
+        getMarvelCharactersLimit.execute(LIMIT_GET_CHARACTERS, new GetMarvelCharactersLimit.Callback() {
             @Override
             public void onMarvelCharacterList(List<MarvelCharacter> marvelCharacters) {
                 marvelCharacterCollection.addAll(marvelCharacters);
@@ -110,7 +112,7 @@ public class CharacterListPresenterImp extends BasePresenter implements Characte
         modelCollectionView.disableLastCharacterViewListener();
         modelCollectionView.showLoading();
 
-        getMarvelCharactersPaginated.execute(5, modelCollectionView.getModelsRenderer(), new GetMarvelCharactersPaginated.Callback() {
+        getMarvelCharactersPaginated.execute(LIMIT_MORE_CHARACTERS, modelCollectionView.getModelsRenderer(), new GetMarvelCharactersPaginated.Callback() {
             @Override
             public void onMarvelCharacterList(List<MarvelCharacter> marvelCharacters) {
                 marvelCharacterCollection.addAll(marvelCharacters);

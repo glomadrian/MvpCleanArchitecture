@@ -3,7 +3,7 @@ package com.github.glomadrian.mvpcleanarchitecture.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.github.glomadrian.mvpcleanarchitecture.app.dependencyInjection.RootModule;
+import com.github.glomadrian.mvpcleanarchitecture.app.dependencyinjection.RootModule;
 
 import dagger.ObjectGraph;
 
@@ -29,7 +29,6 @@ public class MVPCleanArchitectureApplication extends Application {
         super.onCreate();
         objectGraph = ObjectGraph.create(new RootModule(this));
         objectGraph.inject(this);
-//        objectGraph.injectStatics();
     }
 
     public void inject(Object object) {

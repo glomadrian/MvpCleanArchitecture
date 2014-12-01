@@ -1,4 +1,4 @@
-package com.github.glomadrian.mvpcleanarchitecture.app.dependencyInjection;
+package com.github.glomadrian.mvpcleanarchitecture.app.dependencyinjection;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import com.github.glomadrian.mvpcleanarchitecture.app.MVPCleanArchitectureApplication;
 import com.github.glomadrian.mvpcleanarchitecture.ui.activity.MainActivity;
 import com.github.glomadrian.mvpcleanarchitecture.ui.activity.ModelInfoActivity;
-import com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterListFragment;
 import com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterInfoFragment;
 import com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterListFragment;
 import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterListPresenterImp;

@@ -1,6 +1,6 @@
 package com.github.glomadrian.mvpcleanarchitecture.ui.view;
 
-import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.Model;
+import com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel.Model;
 
 import java.util.List;
 

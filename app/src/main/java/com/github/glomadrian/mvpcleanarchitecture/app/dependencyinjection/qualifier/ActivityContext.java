@@ -1,4 +1,4 @@
-package com.github.glomadrian.mvpcleanarchitecture.app.dependencyInjection.qualifier;
+package com.github.glomadrian.mvpcleanarchitecture.app.dependencyinjection.qualifier;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

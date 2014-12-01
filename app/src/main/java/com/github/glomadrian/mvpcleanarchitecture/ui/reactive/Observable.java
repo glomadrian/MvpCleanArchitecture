@@ -3,9 +3,9 @@ package com.github.glomadrian.mvpcleanarchitecture.ui.reactive;
 /**
  * @author glomadrian
  */
-public interface Observable<T1> {
+public interface Observable<T> {
 
-    void register(T1 observer);
+    void register(T observer);
 
-    void unregister(T1 observer);
+    void unregister(T observer);
 }
