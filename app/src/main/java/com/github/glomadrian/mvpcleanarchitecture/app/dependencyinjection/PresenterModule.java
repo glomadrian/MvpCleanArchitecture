@@ -4,10 +4,10 @@ import android.content.Context;
 
 import com.github.glomadrian.mvpcleanarchitecture.domain.interactor.GetMarvelCharactersLimit;
 import com.github.glomadrian.mvpcleanarchitecture.domain.interactor.GetMarvelCharactersPaginated;
-import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterListPresenter;
-import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterListPresenterImp;
 import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterInfoPresenter;
 import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterInfoPresenterImp;
+import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterListPresenter;
+import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterListPresenterImp;
 import com.github.glomadrian.mvpcleanarchitecture.ui.reactive.CharacterSelectedObservable;
 
 import dagger.Module;

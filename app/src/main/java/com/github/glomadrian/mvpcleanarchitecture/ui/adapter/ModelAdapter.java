@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.glomadrian.mvpcleanarchitecture.R;
-import com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel.Model;
 import com.github.glomadrian.mvpcleanarchitecture.ui.viewholder.AbstractRecyclerViewHolder;
+import com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel.Model;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

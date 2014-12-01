@@ -2,7 +2,6 @@ package com.github.glomadrian.mvpcleanarchitecture.ui.presenter;
 
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacterList;
 import com.github.glomadrian.mvpcleanarchitecture.ui.view.CharacterListView;
-import com.github.glomadrian.mvpcleanarchitecture.ui.view.CharacterListView;
 
 /**
  * @author glomadrian

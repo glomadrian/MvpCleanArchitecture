@@ -1,6 +1,4 @@
-package com.github.glomadrian.mvpcleanarchitecture.domain.model;/**
- * @author glomadrian
- */
+package com.github.glomadrian.mvpcleanarchitecture.domain.model;
 
 import org.parceler.Parcel;
 
