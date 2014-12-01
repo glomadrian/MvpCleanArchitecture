@@ -1,8 +1,11 @@
 package com.github.glomadrian.mvpcleanarchitecture.domain.interactor;
 
+<<<<<<< HEAD
 import android.util.Log;
 
 import com.github.glomadrian.mvpcleanarchitecture.domain.LogUtils;
+=======
+>>>>>>> 546c101c57264276a397087a22e9847094903ffc
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.MarvelRepository;
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.exception.GetCharactersException;
@@ -43,7 +46,10 @@ public class GetMarvelCharactersLimitImp extends AbstractInteractor implements G
             });
 
         } catch (GetCharactersException e) {
+<<<<<<< HEAD
             Log.e(LogUtils.generateTag(this), "Error on GerMarvelCharacters interactor");
+=======
+>>>>>>> 546c101c57264276a397087a22e9847094903ffc
             getMainThreadExecutor().execute(new Runnable() {
                 @Override
                 public void run() {

@@ -10,7 +10,13 @@ import java.util.List;
  *
  * @author glomadrian
  */
+<<<<<<< HEAD
 public interface ResponseMapper<T> {
 
     List<MarvelCharacter> mapResponse(T response);
+=======
+public interface ResponseMapper<From> {
+
+    List<MarvelCharacter> mapResponse(From response);
+>>>>>>> 546c101c57264276a397087a22e9847094903ffc
 }

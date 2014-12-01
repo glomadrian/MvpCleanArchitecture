@@ -14,7 +14,11 @@ import com.github.glomadrian.mvpcleanarchitecture.app.BaseFragment;
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 import com.github.glomadrian.mvpcleanarchitecture.ui.presenter.CharacterInfoPresenter;
 import com.github.glomadrian.mvpcleanarchitecture.ui.view.ModelInfoView;
+<<<<<<< HEAD
 import com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel.CharacterInfoViewModel;
+=======
+import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.CharacterInfoViewModel;
+>>>>>>> 546c101c57264276a397087a22e9847094903ffc
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -83,7 +87,11 @@ public class CharacterInfoFragment extends BaseFragment implements ModelInfoView
     @Override
     public void showCharacterInfo(CharacterInfoViewModel characterInfoViewModel) {
 
+<<<<<<< HEAD
         if ("character_info_portrait".equals(tag)) {
+=======
+        if (tag.equals("character_info_portrait")) {
+>>>>>>> 546c101c57264276a397087a22e9847094903ffc
             Picasso.with(getActivity()).load(characterInfoViewModel.getInfoImageUrl()).into(infoImage);
         }
 

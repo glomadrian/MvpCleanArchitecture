@@ -21,8 +21,12 @@ import retrofit.RequestInterceptor;
  */
 public class MarvelRequestInterceptor implements RequestInterceptor {
 
+<<<<<<< HEAD
     private static final int SIGNUM = 1;
     private static final int BYTES = 1;
+=======
+
+>>>>>>> 546c101c57264276a397087a22e9847094903ffc
     private String publicKey;
     private String privateKey;
 
@@ -60,7 +64,13 @@ public class MarvelRequestInterceptor implements RequestInterceptor {
 
             byte[] bytes = stringBuilder.toString().getBytes();
 
+<<<<<<< HEAD
             return new BigInteger(SIGNUM, messageDigest.digest(bytes)).toString(BYTES);
+=======
+            String md5 = new BigInteger(1, messageDigest.digest(bytes)).toString(16);
+
+            return md5;
+>>>>>>> 546c101c57264276a397087a22e9847094903ffc
 
         } catch (NoSuchAlgorithmException e) {
             Log.e(LogUtils.generateTag(this), " Hash type not found");
