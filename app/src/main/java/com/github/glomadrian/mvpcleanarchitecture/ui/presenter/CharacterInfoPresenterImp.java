@@ -2,11 +2,7 @@ package com.github.glomadrian.mvpcleanarchitecture.ui.presenter;
 
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 import com.github.glomadrian.mvpcleanarchitecture.ui.view.ModelInfoView;
-<<<<<<< HEAD
 import com.github.glomadrian.mvpcleanarchitecture.ui.viewmodel.CharacterInfoViewModel;
-=======
-import com.github.glomadrian.mvpcleanarchitecture.ui.viewModel.CharacterInfoViewModel;
->>>>>>> 546c101c57264276a397087a22e9847094903ffc
 
 /**
  * @author glomadrian

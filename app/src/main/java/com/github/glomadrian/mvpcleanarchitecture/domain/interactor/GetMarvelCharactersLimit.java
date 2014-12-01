@@ -2,10 +2,6 @@ package com.github.glomadrian.mvpcleanarchitecture.domain.interactor;
 
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 
-<<<<<<< HEAD
-=======
-import java.util.Collection;
->>>>>>> 546c101c57264276a397087a22e9847094903ffc
 import java.util.List;
 
 /**

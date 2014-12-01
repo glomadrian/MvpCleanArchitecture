@@ -1,11 +1,8 @@
 package com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.retrofit;
 
-<<<<<<< HEAD
 import android.util.Log;
 
 import com.github.glomadrian.mvpcleanarchitecture.domain.LogUtils;
-=======
->>>>>>> 546c101c57264276a397087a22e9847094903ffc
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.MarvelRepository;
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.ResponseMapper;
@@ -59,10 +56,7 @@ public class RetrofitMarvelAPIRepository implements MarvelRepository {
             //Map response from api to domain model
             return responseMapper.mapResponse(characterDataWrapper);
         } catch (RetrofitError retrofitError) {
-<<<<<<< HEAD
             Log.e(LogUtils.generateTag(this), "Error on marvel api repository");
-=======
->>>>>>> 546c101c57264276a397087a22e9847094903ffc
             GetCharactersException getCharactersException = new GetCharactersException();
             getCharactersException.setStackTrace(retrofitError.getStackTrace());
             throw getCharactersException;
@@ -78,10 +72,7 @@ public class RetrofitMarvelAPIRepository implements MarvelRepository {
             //Map response from api to domain model
             return responseMapper.mapResponse(characterDataWrapper);
         } catch (RetrofitError retrofitError) {
-<<<<<<< HEAD
             Log.e(LogUtils.generateTag(this), "Error on marvel api repository");
-=======
->>>>>>> 546c101c57264276a397087a22e9847094903ffc
             GetCharactersException getCharactersException = new GetCharactersException();
             getCharactersException.setStackTrace(retrofitError.getStackTrace());
             throw getCharactersException;

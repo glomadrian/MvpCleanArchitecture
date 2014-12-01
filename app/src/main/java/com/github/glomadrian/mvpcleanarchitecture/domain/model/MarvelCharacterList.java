@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 package com.github.glomadrian.mvpcleanarchitecture.domain.model;
-=======
-package com.github.glomadrian.mvpcleanarchitecture.domain.model;/**
- * @author glomadrian
- */
->>>>>>> 546c101c57264276a397087a22e9847094903ffc
 
 import org.parceler.Parcel;
 
@@ -17,11 +11,7 @@ import java.util.List;
 @Parcel
 public class MarvelCharacterList {
 
-<<<<<<< HEAD
-    private final List<MarvelCharacter> marvelCharacters;
-=======
     public final List<MarvelCharacter> marvelCharacters;
->>>>>>> 546c101c57264276a397087a22e9847094903ffc
 
     public MarvelCharacterList() {
         this.marvelCharacters = new ArrayList<MarvelCharacter>();

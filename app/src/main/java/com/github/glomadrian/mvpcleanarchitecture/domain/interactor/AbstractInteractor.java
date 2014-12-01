@@ -1,12 +1,7 @@
 package com.github.glomadrian.mvpcleanarchitecture.domain.interactor;
 
-<<<<<<< HEAD
 import com.github.glomadrian.mvpcleanarchitecture.executor.Interactor;
 import com.github.glomadrian.mvpcleanarchitecture.executor.InteractorExecutor;
-=======
-import com.github.glomadrian.mvpcleanarchitecture.executor.InteractorExecutor;
-import com.github.glomadrian.mvpcleanarchitecture.executor.Interactor;
->>>>>>> 546c101c57264276a397087a22e9847094903ffc
 import com.github.glomadrian.mvpcleanarchitecture.executor.MainThreadExecutor;
 
 /**
