@@ -1,5 +1,9 @@
-MVP Clean Architecture [![Build Status](https://travis-ci.org/glomadrian/MvpCleanArchitecture.svg?branch=master)](https://travis-ci.org/glomadrian/MvpCleanArchitecture)
+MVP Clean Architecture
 ==
+
+[![Build Status](https://travis-ci.org/glomadrian/MvpCleanArchitecture.svg?branch=master)](https://travis-ci.org/glomadrian/MvpCleanArchitecture)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MVP%20Clean%20Architecture-brightgreen.svg)](https://android-arsenal.com/details/3/1210)
+
 
 A sample project using Clean architecture and MVP
 
