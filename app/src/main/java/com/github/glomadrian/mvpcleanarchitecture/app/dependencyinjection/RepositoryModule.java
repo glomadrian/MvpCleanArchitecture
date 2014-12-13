@@ -24,19 +24,19 @@ public class RepositoryModule {
 
     @Provides
     @Named("api_public_key")
-    String provideApiKey() {
+    public String provideApiKey() {
         return "fakePublicKey";
     }
 
     @Provides
     @Named("api_private_key")
-    String providePrivateKey() {
+    public String providePrivateKey() {
         return "fakePrivateKey";
     }
 
     @Provides
     @Named("api_base_url")
-    String provideApiBaseUrl() {
+    public String provideApiBaseUrl() {
         return "http://gateway.marvel.com";
     }
 

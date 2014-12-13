@@ -18,13 +18,14 @@ import dagger.Provides;
 /**
  * @author glomadrian
  */
-
 @Module(
         includes = {
                 ExecutorModule.class,
                 InteractorModule.class,
                 RepositoryModule.class,
                 PresenterModule.class,
+                ActivityModule.class,
+                NavigatorModule.class,
                 ReactiveModule.class
         },
         injects = {
@@ -46,7 +47,6 @@ public class RootModule {
         this.context = context;
     }
 
-
     @Provides
     @Singleton
     public Context provideApplicationContext() {
@@ -57,6 +57,4 @@ public class RootModule {
     public LayoutInflater provideLayoutInflater() {
         return LayoutInflater.from(context);
     }
-
-
 }

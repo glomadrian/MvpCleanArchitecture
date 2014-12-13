@@ -14,7 +14,6 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseActivity extends Activity {
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +26,7 @@ public abstract class BaseActivity extends Activity {
         mvpCleanArchitectureApplication.addModules(new ActivityModule(this));
         mvpCleanArchitectureApplication.inject(this);
     }
+
 
     private void injectViews() {
         ButterKnife.inject(this);

@@ -1,8 +1,6 @@
 package com.github.glomadrian.mvpcleanarchitecture.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -10,12 +8,12 @@ import com.github.glomadrian.mvpcleanarchitecture.R;
 import com.github.glomadrian.mvpcleanarchitecture.app.BaseActivity;
 import com.github.glomadrian.mvpcleanarchitecture.domain.model.MarvelCharacter;
 import com.github.glomadrian.mvpcleanarchitecture.ui.fragment.CharacterInfoFragment;
+import com.github.glomadrian.mvpcleanarchitecture.ui.navigator.Navigator;
 import com.github.glomadrian.mvpcleanarchitecture.ui.reactive.CharacterSelectedObservable;
 import com.github.glomadrian.mvpcleanarchitecture.ui.reactive.CharacterSelectedObserver;
 
-import org.parceler.Parcels;
-
 import javax.inject.Inject;
+import javax.inject.Named;
 
 
 /**
@@ -35,6 +33,9 @@ public class MainActivity extends BaseActivity implements CharacterSelectedObser
 
     @Inject
     CharacterSelectedObservable characterSelectedObservable;
+    @Inject
+    @Named("main_navigator")
+    Navigator navigator;
 
     //The viewTag is the key for the navigation with different sizes
     private String viewTag;
@@ -77,10 +78,7 @@ public class MainActivity extends BaseActivity implements CharacterSelectedObser
 
     //TODO Change to navigator class with activity context
     private void launchCharacterInfoActivity(MarvelCharacter marvelCharacter) {
-        Intent intent = new Intent(this, ModelInfoActivity.class);
-        Parcelable parcelable = Parcels.wrap(marvelCharacter);
-        intent.putExtra(ModelInfoActivity.KEY_CHARACTER, parcelable);
-        startActivity(intent);
+        navigator.openCharacterInfoView(marvelCharacter);
     }
 
     private void replaceCharacterInfoFragment(MarvelCharacter marvelCharacter) {
