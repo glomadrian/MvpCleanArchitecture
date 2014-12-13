@@ -38,8 +38,6 @@ public class MarvelRequestInterceptor implements RequestInterceptor {
         request.addEncodedQueryParam(ApiUtils.PARAM_TIMESTAMP, timeStamp);
         request.addEncodedQueryParam(ApiUtils.PARAM_KEY, publicKey);
         request.addEncodedQueryParam(ApiUtils.PARAM_HASH, generateMarvelHash(timeStamp, privateKey, publicKey));
-
-
     }
 
     private String generateTimestamp() {
@@ -53,14 +51,8 @@ public class MarvelRequestInterceptor implements RequestInterceptor {
 
         try {
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(timeStamp);
-            stringBuilder.append(privateKey);
-            stringBuilder.append(publicKey);
-
-            byte[] bytes = stringBuilder.toString().getBytes();
-
+            String marvelHash = timeStamp + privateKey + publicKey;
+            byte[] bytes = marvelHash.getBytes();
             return new BigInteger(SIGNUM, messageDigest.digest(bytes)).toString(BYTES);
 
         } catch (NoSuchAlgorithmException e) {

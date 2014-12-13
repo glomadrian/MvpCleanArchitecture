@@ -111,7 +111,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:text="Title"
+                    tools:text="Title"
                     android:textStyle="bold"
                     android:layout_alignBottom="@+id/info_image"
                     android:layout_margin="20dp"

@@ -6,4 +6,5 @@
     <string name="info_number_3">Histories</string>
     <string name="mode_info_description_text">No description avaiable</string>
     <string name="genericError">Error getting api information</string>
+    <string name="info_image_content_description">Info image</string>
 </resources>

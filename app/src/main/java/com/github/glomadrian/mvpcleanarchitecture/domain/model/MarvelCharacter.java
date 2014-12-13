@@ -4,7 +4,7 @@ import org.parceler.Parcel;
 
 /**
  * Parcel is a library to manage parcelable in a easy way, for default serialization
- * is necessary to avoid private fields
+ * is necessary to avoid private fields if you want to use proguard
  *
  * @author glomadrian
  */
