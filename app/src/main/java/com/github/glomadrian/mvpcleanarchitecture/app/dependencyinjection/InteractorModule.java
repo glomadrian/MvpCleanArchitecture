@@ -8,6 +8,8 @@ import com.github.glomadrian.mvpcleanarchitecture.domain.repository.MarvelReposi
 import com.github.glomadrian.mvpcleanarchitecture.executor.InteractorExecutor;
 import com.github.glomadrian.mvpcleanarchitecture.executor.MainThreadExecutor;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -22,12 +24,12 @@ public class InteractorModule {
 
 
     @Provides
-    public GetMarvelCharactersLimit provideGetMarvelCharactersLimit(InteractorExecutor interactorExecutor, MainThreadExecutor mainThreadExecutor, MarvelRepository marvelRepository) {
+    public GetMarvelCharactersLimit provideGetMarvelCharactersLimit(InteractorExecutor interactorExecutor, MainThreadExecutor mainThreadExecutor, @Named("mock_api") MarvelRepository marvelRepository) {
         return new GetMarvelCharactersLimitImp(interactorExecutor, mainThreadExecutor, marvelRepository);
     }
 
     @Provides
-    public GetMarvelCharactersPaginated provideGetMarvelCharactersPaginated(InteractorExecutor interactorExecutor, MainThreadExecutor mainThreadExecutor, MarvelRepository marvelRepository) {
+    public GetMarvelCharactersPaginated provideGetMarvelCharactersPaginated(InteractorExecutor interactorExecutor, MainThreadExecutor mainThreadExecutor, @Named("mock_api") MarvelRepository marvelRepository) {
         return new GetMarvelCharactersPaginatedImp(interactorExecutor, mainThreadExecutor, marvelRepository);
     }
 }

@@ -24,9 +24,7 @@ import dagger.Provides;
                 InteractorModule.class,
                 RepositoryModule.class,
                 PresenterModule.class,
-                ActivityModule.class,
-                NavigatorModule.class,
-                ReactiveModule.class
+                ReactiveModule.class,
         },
         injects = {
                 MVPCleanArchitectureApplication.class,
@@ -35,7 +33,8 @@ import dagger.Provides;
                 CharacterListPresenterImp.class,
                 MainActivity.class,
                 CharacterInfoFragment.class,
-                ModelInfoActivity.class
+                ModelInfoActivity.class,
+                MainActivity.class
         },
         library = true
 )

@@ -3,8 +3,6 @@ package com.github.glomadrian.mvpcleanarchitecture.app;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.github.glomadrian.mvpcleanarchitecture.app.dependencyinjection.ActivityModule;
-
 import butterknife.ButterKnife;
 
 /**
@@ -23,7 +21,6 @@ public abstract class BaseActivity extends Activity {
 
     private void injectDependencies() {
         MVPCleanArchitectureApplication mvpCleanArchitectureApplication = (MVPCleanArchitectureApplication) getApplication();
-        mvpCleanArchitectureApplication.addModules(new ActivityModule(this));
         mvpCleanArchitectureApplication.inject(this);
     }
 

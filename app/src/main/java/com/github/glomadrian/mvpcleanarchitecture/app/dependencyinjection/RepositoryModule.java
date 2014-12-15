@@ -5,6 +5,7 @@ import com.github.glomadrian.mvpcleanarchitecture.domain.repository.ResponseMapp
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.mapper.MarvelApiResponseMapper;
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.retrofit.RetrofitMarvelAPIRepository;
 import com.github.glomadrian.mvpcleanarchitecture.domain.repository.api.retrofit.interceptor.MarvelRequestInterceptor;
+import com.github.glomadrian.mvpcleanarchitecture.domain.repository.mock.MarvelMockRepository;
 
 import javax.inject.Named;
 
@@ -54,7 +55,14 @@ public class RepositoryModule {
     }
 
     @Provides
+    @Named("production_api")
     public MarvelRepository provideMarvelRepository(RequestInterceptor requestInterceptor, ResponseMapper responseMapper, @Named("api_base_url") String endpoint) {
         return new RetrofitMarvelAPIRepository(endpoint, requestInterceptor, responseMapper);
+    }
+
+    @Provides
+    @Named("mock_api")
+    public MarvelRepository provideMarvelRepository() {
+        return new MarvelMockRepository();
     }
 }
