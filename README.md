@@ -31,7 +31,7 @@ Apllication structure
 ------------
 
 
-//TODO
+[![screenshot](./img/cleanandroid.PNG "Android MVP Architecture")](https://prezi.com/tsepwmizqnvb/android-mvp-architecture/)
 
 
 External Libs
