@@ -27,11 +27,11 @@ MVP
 
 Model view presenter is one of the most used architectural pattern, in Android this pattern can be used with a few limitations, Activities and Fragments have more responsibility than a simple view, anywhere is a wonderfull pattern to be used in Android applications.
 
-Apllication structure
+Application structure
 ------------
 
 
-//TODO
+[![screenshot](./img/cleanandroid.PNG "Android MVP Architecture")](https://prezi.com/tsepwmizqnvb/android-mvp-architecture/)
 
 
 External Libs
