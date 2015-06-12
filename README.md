@@ -39,8 +39,8 @@ External Libs
 
 This project use this external libs
 
-* [Retrofit ](http://square.github.io/dagger/)
-* [Dagger](http://square.github.io/retrofit/)
+* [Dagger](http://square.github.io/dagger/)
+* [Retrofit](http://square.github.io/retrofit/)
 * [ButterKnife](http://jakewharton.github.io/butterknife/)
 * [Parceler](https://github.com/johncarl81/parceler)
 * [Picasso](http://square.github.io/picasso/)
